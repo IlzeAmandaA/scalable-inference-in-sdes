@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     test_loader = load_rotating_mnist_data(rotating_mnist_test_dataset, n_angels=n_angle)
 
-    x = iter(test_loader).next()[0].to(device)
+    x = next(iter(test_loader))[0].to(device) #.next()
     # only first 16 images
     visualize_output(
         vae, x[:16], output_path
